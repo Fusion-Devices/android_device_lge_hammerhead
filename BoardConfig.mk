@@ -21,6 +21,20 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
+TARGET_USE_ION_COMPAT := true
+
+FUSION_OPT := true
+FUSION_OFAST := true
+FUSION_STRICT := true
+FUSION_KRAIT := true 
+FUSION_GRAPHITE := true
+FUSION_PIPE := true
+FUSION_ENABLE_GCCONLY := true
+FLOOP_NEST_OPTIMIZE := true
+FUSION_FFAST_MATH := true
+TARGET_FUSION_ROM := 4.9
+TARGET_FUSION_KERNEL := 4.9-sm
+
 TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_BASE := 0x00000000
@@ -109,7 +123,7 @@ BOARD_SEPOLICY_DIRS += \
        device/lge/hammerhead/sepolicy
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := cyanogenmod_hammerhead_defconfig
+TARGET_KERNEL_CONFIG := bricked_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 
 # The list below is order dependent
@@ -174,3 +188,13 @@ USE_MINIKIN := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+TARGET_RECOVERY_DEVICE_DIRS := device/lge/hammerhead
+DEVICE_RESOLUTION := 1080x1920
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_L_CRYPTO := true
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
+TW_SCREEN_BLANK_ON_BOOT := true
+TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
